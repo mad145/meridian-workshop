@@ -4,6 +4,7 @@ export default {
     overview: '概要',
     inventory: '在庫',
     orders: '注文',
+    restocking: '補充',
     finance: '財務',
     demandForecast: '需要予測',
     companyName: '触媒コンポーネンツ',
@@ -378,6 +379,44 @@ export default {
     'Premier Industries': 'プレミア工業',
     'Stellar Components Ltd': 'ステラコンポーネンツ',
     'Dynamic Systems Ltd': 'ダイナミックシステムズ'
+  },
+
+  // Restocking
+  restocking: {
+    title: '補充推奨',
+    subtitle: '発注点を下回るアイテム（緊急度順）',
+    budgetLabel: '予算上限',
+    budgetPlaceholder: '予算を入力...',
+    summary: '{count}件 · 推定{cost} · 残り{remaining}',
+    noRecommendations: '現在のフィルターで発注点を下回るアイテムはありません。',
+    dismiss: '却下',
+    columns: {
+      priority: '優先度',
+      sku: 'SKU',
+      name: '商品名',
+      warehouse: '倉庫',
+      category: 'カテゴリ',
+      onHand: '在庫数',
+      reorderPoint: '発注点',
+      trend: 'トレンド',
+      qtyToOrder: '発注数',
+      estCost: '推定費用',
+      action: 'アクション'
+    },
+    priority: {
+      critical: '緊急',
+      high: '高',
+      medium: '中'
+    },
+    trend: {
+      increasing: '増加',
+      stable: '安定',
+      decreasing: '減少'
+    },
+    footer: {
+      total: '合計',
+      withinBudget: '予算内 {count}件'
+    }
   },
 
   // Reports

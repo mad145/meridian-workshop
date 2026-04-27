@@ -4,6 +4,7 @@ export default {
     overview: 'Overview',
     inventory: 'Inventory',
     orders: 'Orders',
+    restocking: 'Restocking',
     finance: 'Finance',
     demandForecast: 'Demand Forecast',
     companyName: 'Catalyst Components',
@@ -324,6 +325,44 @@ export default {
     filter: 'Filter',
     export: 'Export',
     items: 'items'
+  },
+
+  // Restocking
+  restocking: {
+    title: 'Restocking Recommendations',
+    subtitle: 'Items below reorder point, ranked by urgency',
+    budgetLabel: 'Budget ceiling',
+    budgetPlaceholder: 'Enter budget...',
+    summary: '{count} items · est. {cost} · {remaining} remaining',
+    noRecommendations: 'No items below reorder point for the current filters.',
+    dismiss: 'Dismiss',
+    columns: {
+      priority: 'Priority',
+      sku: 'SKU',
+      name: 'Name',
+      warehouse: 'Warehouse',
+      category: 'Category',
+      onHand: 'On Hand',
+      reorderPoint: 'Reorder Pt',
+      trend: 'Trend',
+      qtyToOrder: 'Qty to Order',
+      estCost: 'Est. Cost',
+      action: 'Action'
+    },
+    priority: {
+      critical: 'Critical',
+      high: 'High',
+      medium: 'Medium'
+    },
+    trend: {
+      increasing: 'Increasing',
+      stable: 'Stable',
+      decreasing: 'Decreasing'
+    },
+    footer: {
+      total: 'Total',
+      withinBudget: '{count} items within budget'
+    }
   },
 
   // Reports
