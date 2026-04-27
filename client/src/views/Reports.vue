@@ -252,26 +252,27 @@ export default {
 </script>
 
 <style scoped>
-.reports {
-  padding: 0;
-}
+.reports { padding: 0; }
 
 .card {
-  background: white;
-  border-radius: 12px;
+  background: var(--bg-surface);
+  border-radius: 10px;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border);
 }
 
 .card-header {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.875rem;
+  border-bottom: 1px solid var(--border);
 }
 
 .card-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #0f172a;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.025em;
   margin: 0;
 }
 
@@ -281,33 +282,37 @@ export default {
 }
 
 .reports-table th {
-  background: #f8fafc;
-  padding: 0.75rem;
+  background: var(--bg-muted);
+  padding: 0.5rem 0.75rem;
   text-align: left;
+  font-size: 0.75rem;
   font-weight: 600;
-  color: #64748b;
-  border-bottom: 2px solid #e2e8f0;
+  color: var(--text-th);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border);
 }
 
 .reports-table td {
-  padding: 0.75rem;
-  border-bottom: 1px solid #e2e8f0;
+  padding: 0.625rem 0.75rem;
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-cell);
+  font-size: 0.875rem;
 }
 
-.reports-table tr:hover {
-  background: #f8fafc;
-}
+.reports-table tr:last-child td { border-bottom: none; }
+.reports-table tr:hover { background: var(--bg-hover); }
 
 .chart-container {
-  padding: 2rem 1rem;
-  min-height: 300px;
+  padding: 2rem 1rem 1rem;
+  min-height: 280px;
 }
 
 .bar-chart {
   display: flex;
   align-items: flex-end;
   justify-content: space-around;
-  height: 250px;
+  height: 220px;
   gap: 0.5rem;
 }
 
@@ -320,7 +325,7 @@ export default {
 }
 
 .bar-container {
-  height: 200px;
+  height: 180px;
   display: flex;
   align-items: flex-end;
   width: 100%;
@@ -328,20 +333,19 @@ export default {
 
 .bar {
   width: 100%;
-  background: linear-gradient(to top, #3b82f6, #60a5fa);
+  background: linear-gradient(to top, var(--accent), color-mix(in srgb, var(--accent) 60%, white));
   border-radius: 4px 4px 0 0;
-  transition: all 0.3s;
+  transition: opacity 0.2s ease;
   cursor: pointer;
+  min-height: 2px;
 }
 
-.bar:hover {
-  background: linear-gradient(to top, #2563eb, #3b82f6);
-}
+.bar:hover { opacity: 0.75; }
 
 .bar-label {
   margin-top: 1.5rem;
   font-size: 0.75rem;
-  color: #64748b;
+  color: var(--text-muted);
   text-align: center;
   transform: rotate(-45deg);
   white-space: nowrap;
@@ -351,70 +355,57 @@ export default {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
-  margin-top: 1.5rem;
+  margin-top: 0;
 }
 
 .stat-card {
-  background: white;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  border-left: 4px solid #3b82f6;
+  background: var(--bg-surface);
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
 }
 
 .stat-label {
-  font-size: 0.875rem;
-  color: #64748b;
-  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  margin-bottom: 0.625rem;
 }
 
 .stat-value {
-  font-size: 1.875rem;
+  font-size: 2rem;
   font-weight: 700;
-  color: #0f172a;
+  color: var(--text-primary);
+  letter-spacing: -0.025em;
 }
 
 .badge {
+  display: inline-block;
   padding: 0.25rem 0.75rem;
   border-radius: 9999px;
-  font-size: 0.875rem;
-  font-weight: 500;
-}
-
-.badge.success {
-  background: #dcfce7;
-  color: #166534;
-}
-
-.badge.warning {
-  background: #fef3c7;
-  color: #92400e;
-}
-
-.badge.danger {
-  background: #fee2e2;
-  color: #991b1b;
-}
-
-.positive-change {
-  color: #16a34a;
+  font-size: 0.813rem;
   font-weight: 600;
 }
 
-.negative-change {
-  color: #dc2626;
-  font-weight: 600;
-}
+.badge.success { background: var(--badge-success-bg); color: var(--badge-success-text); }
+.badge.warning { background: var(--badge-warning-bg); color: var(--badge-warning-text); }
+.badge.danger  { background: var(--badge-danger-bg);  color: var(--badge-danger-text); }
+
+.positive-change { color: var(--c-success); font-weight: 600; }
+.negative-change { color: var(--c-danger);  font-weight: 600; }
 
 .loading {
   text-align: center;
   padding: 3rem;
-  color: #64748b;
+  color: var(--text-muted);
 }
 
 .error {
-  background: #fee2e2;
-  color: #991b1b;
+  background: var(--badge-danger-bg);
+  color: var(--badge-danger-text);
   padding: 1rem;
   border-radius: 8px;
   margin: 1rem 0;
